@@ -1,93 +1,49 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Login</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,800italic,800,700italic,700,600italic,600,400italic,300%7CRoboto+Condensed:400,400i,700,700i%7CGreat+Vibes" rel="stylesheet">
-    <!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
-    <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <!--<link rel="stylesheet" href="css/orange.css">-->
-    <link rel="stylesheet" href="css/purple.css">
-    <link rel="stylesheet" href="js/header-script.js">
-    <script type="text/javascript" src="cordova.js"></script>
-</head>
-<body class="page-body">
-<!--====== LOADER =====-->
-<div class="loader"></div>
-<!--============ SIDE-NAV =============-->
-<div w3-include-html="include/side_nav.html" class="sidenav-content"></div>
-<!-- end sidenav-content -->
-<!--=============== FULLSCR-NAV ==============-->
-<div w3-include-html="include/fullscr_nav.html" id="fullscr-nav" class="fullscr-navigation"></div>
-<!-- end fullscr-nav -->
-<!--================ SHOPPING-CART ==============-->
-<div w3-include-html="include/shopping_cart.html" id="shopping-cart-sidebar" class="shc-sidebar"></div>
-<!-- shopping-cart-sidebar -->
-<!--============== USER-PROFILE-SIDEBAR =============-->
-<div w3-include-html="include/user_profile_sidebar.html" id="user-profile-sidebar" class="user-prf-sidebar"></div>
-<!-- end user-profile-sidebar -->
-<div class="canvas">
-    <div class="overlay-black"></div>
-    <!--========= HEADER =========-->
-    <div w3-include-html="include/header.html" class="header"></div>
-    <!-- end header -->
-    <!--========= PAGE-COVER =========-->
-    <div class="page-cover">
-        <div class="container-fluid">
-            <h3><span class="cover-left-icon pull-left"><i class="fa fa-lock"></i></span>Login<span class="cover-right-icon pull-right"><i class="fa fa-lock"></i></span></h3>
-        </div><!-- end container-fluid -->
-    </div><!-- end page-cover -->
-    <!--=================== PAGE-WRAPPER ================-->
-    <section class="page-wrapper innerpage-section-padding">
-        <div id="login-page" >
-            <div class="container-fluid text-center">
-                <div class="innerpage-heading">
-                    <h3>Login</h3>
-                    <p>Login to start add your orders </p>
-                </div><!-- end innerpage-heading -->
-                <form class="custom-form" id="login-form">
-                    <div id="response"></div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" name="phone" class="form-control" placeholder="User Phone"  required/>
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="password" name="password" class="form-control" placeholder="Password"  required/>
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        </div>
-                    </div>
-                    <button class="btn btn-orange btn-radius">Login</button>
-                </form>
-                <!--<div id="map" style="height: 500px"></div>-->
-                <div class="form-page-links">
-                    <!--<a href="forget-password.html">Forgot Password ?</a>-->
-                    <p> New Here ? <a href="register.html">Register Now</a></p>
-                </div><!-- end form-page-links -->
-            </div><!-- end container-fluid -->
-        </div><!-- end login-page -->
-    </section><!-- end page-wrapper -->
-    <!--=============== FOOTER ===============-->
-    <!--<section w3-include-html="include/footer.html" id="footer" class="section-padding"></section>-->
-    <!-- end footer -->
-</div><!-- end canvas -->
-<!-- Page Scripts Starts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/custom-navigation.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQEddaDk0teVRCde15IqYQrrl0vMilKXo"> </script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/index.js"></script>
-<script src="js/login.js"></script>
-<!-- Page Scripts Ends -->
-</body>
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
 </html>
